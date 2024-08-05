@@ -1,0 +1,8 @@
+.hero {
+  background: var(--mantine-color-skyBlue-3);
+  height: 350px;
+}
+
+.container {
+  height: 100%;
+}

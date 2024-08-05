@@ -1,0 +1,16 @@
+.tabList {
+  --tab-border-color: var(--mantine-color-skyBlue-6);
+  background-color: var(--mantine-color-skyBlue-3);
+  justify-content: center;
+}
+
+.tab {
+  &[data-active] {
+    background-color: white;
+  }
+}
+
+.tabLabel {
+  font-size: 18px;
+  font-weight: 500;
+}

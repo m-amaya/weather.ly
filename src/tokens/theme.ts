@@ -2,7 +2,9 @@ import {
   createTheme,
   CSSVariablesResolver,
   DEFAULT_THEME,
-  mergeMantineTheme
+  mergeMantineTheme,
+  Switch,
+  TabsTab
 } from "@mantine/core";
 
 const themeOverride = createTheme({
@@ -26,9 +28,29 @@ const themeOverride = createTheme({
   focusRing: "auto",
   fontFamily: "'Inter Variable', sans-serif",
   headings: {
-    fontFamily: "'Inter Variable', sans-serif"
+    fontFamily: "'Lexend Variable', sans-serif"
   },
-  primaryColor: "skyBlue"
+  primaryColor: "skyBlue",
+  components: {
+    Switch: Switch.extend({
+      styles: (theme) => ({
+        thumb: {
+          "--switch-thumb-bd": theme.colors.skyBlue[6]
+        },
+        track: {
+          "--switch-bd": theme.colors.skyBlue[6],
+          "--switch-bg": theme.colors.skyBlue[3],
+          "--switch-text-color": theme.black
+        }
+      })
+    }),
+    TabsTab: TabsTab.extend({
+      defaultProps: {
+        px: "lg",
+        py: "md"
+      }
+    })
+  }
 });
 
 export const theme = mergeMantineTheme(DEFAULT_THEME, themeOverride);
